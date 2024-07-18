@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Serdar Ağar - Video Editör ve 3D Artist </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            margin: 20px 0;
+        }
+        .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 24px;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(30% - 10px); /* Resimlerin genişliğini ayarlayın */
+            height: auto; /* Yükseklik otomatik olsun */
+            object-fit: cover;
+            margin: 5px; /* Resimler arası boşluk */
+            cursor: pointer;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .video-container iframe {
+            flex: 1 1 calc(50% - 10px);
+            height: 315px;
+        }
+        /* Lightbox CSS */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .lightbox-content img {
+            width: 100%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.hizliresim.com/o01m2o1.png" alt="Serdar Ağar" class="profile-img">
+        <h1>Serdar Ağar</h1>
+        <h2>Video Editör ve 3D Artist</h2>
+        
+        <div class="social-icons">
+           
+            
+            <a href="https://www.youtube.com/@AgseEdit" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Ben Kimim?</h3>
+            <p>After effect, premier pro ve blender'la uğraşmayı seven biriyim </p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Çalışmalarım</h3>
+            <div class="gallery">
+                <img src="https://i.hizliresim.com/ps9pi3m.png" alt="Donut">
+                <img src="https://i.hizliresim.com/kjonwlr.png" alt="Sandalye">
+                <img src="https://i.hizliresim.com/n63bd0h.png" alt="Sandalye beyaz">
+                <img src="https://i.hizliresim.com/icwneib.png" alt="Kapitone Koltuk">
+               
+                <!-- Daha fazla proje ekleyebilirsiniz -->
+            </div>
+        </div>
+		
+      <!--  <div class="section">
+            <h3 class="section-title">YouTube Videolarım</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/3hZ2w-hXKu4?si=VfkUF8G68XPNHWr-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/OqU9sbL8og8?si=RKH3raKgd-t8mIfS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/z883W1hrOzc?si=OYy1Fjlnowv80ZIN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/EX6onNmiM_Y?si=5atdnxkxWmJ3APvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/7m1IhDTnb74?si=5r1bfhfPvS8-aZqO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/3F8ME0BbjoE?si=RuCk076WXf-_oi-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/7qCTz6oI-ow?si=J9uSfIvWkdTnJ2vL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              
+            </div>
+        </div>   
+		-->
+
+        <div class="section">
+            <h3 class="section-title">İletişim</h3>
+            <p>E-posta: serdaragar6@gmail.com</p>
+        <p>Discord: agsse</p>
+            <p>Serdar Ağar @2024</p>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">×</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="">
+        </div>
+    </div>
+
+    <script>
+        // Lightbox script
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const close = document.querySelector('.close');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = image.src;
+            });
+        });
+
+        close.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
